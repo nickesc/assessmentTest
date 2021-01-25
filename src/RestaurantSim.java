@@ -7,9 +7,12 @@ public class RestaurantSim {
         // off the order at the kitchen.
         Order order1= new Order(0,"mac and cheese", 20);
         uwu.takeOrder(order1);
-        uwu.takeOrder(new Order(1,"cheesecake", 30));
-        uwu.takeOrder(new Order(2,"cheese quesadilla", 15));
-        uwu.takeOrder(new Order(0,"lobster", 100));
+        uwu.takeOrder(new Order(1,"pork chop", 30));
+        uwu.takeOrder(new Order(2,"sandwich", 15));
+        uwu.takeOrder(new Order(0,"lobster", 50));
+
+        // the robot also tries to get an order from a table that doesn't exist, but isn't able and moves on
+        uwu.takeOrder(new Order(3,"steak", 30));
 
         // robot drops the order off at the kitchen and removes the order from his "pocket."
         uwu.dropOffOrder();

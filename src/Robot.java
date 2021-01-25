@@ -17,8 +17,13 @@ public class Robot {
     }
 
     public void takeOrder(Order order){
-        this.pocket.offer(order);
-        this.checks.set(order.table, this.checks.get(order.table)+ order.price);
+        if(order.table<checks.size()) {
+            this.pocket.offer(order);
+            this.checks.set(order.table, this.checks.get(order.table) + order.price);
+        }
+        else{
+            System.out.println("Table #"+order.table+" doesn't exist! "+this.name+" cannot take that order!");
+        }
     }
 
     public void dropOffOrder(){
